@@ -1,0 +1,3 @@
+[submodule "themes/dolfo.styles"]
+	path = themes/dolfo.styles
+	url = git@github.com:rodolfo2488/hugo-theme-hello-friend.git
