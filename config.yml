@@ -1,0 +1,56 @@
+baseURL: 'https://dolfo.codes/'
+languageCode: 'en-us'
+title: 'dolfo.codes'
+theme: 'papermod'
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+params:
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowPostNavLinks: true
+    ShowReadingTime: true
+    ShowRssButtonInSectionTermList: true
+    ShowToc: true
+    description: "Dolfo Codes blog"
+    displayFullLangName: true
+    env: production
+    profileMode:
+        enabled: true
+        title: Hi, I am Dolfo # optional default will be site title
+        subtitle: "Software Engineer"
+        imageUrl: "https://s.gravatar.com/avatar/22f5fba1c6c43cc5774f1c0e735d01f9?s=120" # optional
+        imageTitle: "Dolfo" # optional
+        imageWidth: 120 # custom size
+        imageHeight: 120 # custom size
+        buttons:
+            - name: Blog
+              url: posts
+    socialIcons: # optional
+        - name: Twitter
+          url: https://twitter.com/rodolfo2488/
+        - name: Github
+          url: "https://github.com/dolfolife"
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/dolfolife
+menu:
+    main:
+        - name: Search
+          url: search/
+        - name: Blog
+          url: posts/
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        noClasses: false
