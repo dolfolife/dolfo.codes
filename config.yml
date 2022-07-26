@@ -18,7 +18,6 @@ params:
     ShowToc: true
     description: "Dolfo Codes blog"
     displayFullLangName: true
-    env: production
     profileMode:
         enabled: true
         title: Hi, I am Dolfo # optional default will be site title
