@@ -39,7 +39,7 @@ jobs:
 
     # Builds the site using Hugo
     - name: Build
-      run: hugo --gc --minify --config=config.toml
+      run: hugo --gc --minify --config=config.yml
 
      # Push our generated Hugo site to Vercel
     - name: Deploy to Vercel
