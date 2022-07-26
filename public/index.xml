@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>dolfo.codes</title>
+    <link>https://dolfo.codes/</link>
+    <description>Recent content on dolfo.codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Jul 2022 20:10:50 -0500</lastBuildDate><atom:link href="https://dolfo.codes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://dolfo.codes/posts/hello-world/</link>
+      <pubDate>Mon, 25 Jul 2022 20:10:50 -0500</pubDate>
+      
+      <guid>https://dolfo.codes/posts/hello-world/</guid>
+      <description>Hello There. I have been thinking in sharing my thoughts. I do not consider myself a good writer nor a good software engineer, but I like to sit in silence and think about what I do. I hope you enjoy it.</description>
+    </item>
+    
+    
+  </channel>
+</rss>

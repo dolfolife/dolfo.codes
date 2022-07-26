@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dolfo.codes/posts/hello-world/</loc>
+    <lastmod>2022-07-25T20:10:50-05:00</lastmod>
+  </url><url>
+    <loc>https://dolfo.codes/</loc>
+    <lastmod>2022-07-25T20:10:50-05:00</lastmod>
+  </url><url>
+    <loc>https://dolfo.codes/posts/</loc>
+    <lastmod>2022-07-25T20:10:50-05:00</lastmod>
+  </url><url>
+    <loc>https://dolfo.codes/categories/</loc>
+  </url><url>
+    <loc>https://dolfo.codes/search/</loc>
+  </url><url>
+    <loc>https://dolfo.codes/tags/</loc>
+  </url>
+</urlset>
