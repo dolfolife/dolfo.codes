@@ -21,7 +21,7 @@ params:
     profileMode:
         enabled: true
         title: Hi, I am Dolfo # optional default will be site title
-        subtitle: "Software Engineer"
+        subtitle: "Software Engineering Manager"
         imageUrl: "https://s.gravatar.com/avatar/22f5fba1c6c43cc5774f1c0e735d01f9?s=120" # optional
         imageTitle: "Dolfo" # optional
         imageWidth: 120 # custom size
