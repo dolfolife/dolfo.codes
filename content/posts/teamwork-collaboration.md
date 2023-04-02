@@ -16,28 +16,28 @@ In my first post, I will be talking about Collaboration especially working on ag
 
 In an agile team, everyone works together closely to create high-quality software products. According to the [Society for Human Resource Management](https://www.shrm.org), teamwork and collaboration are one of the top skills that employers look for in job candidates. Therefore, to achieve success as a Software Engineer, you need to work well with others.
 
-For everyone working together, the team members need to click like pieces of a clock to move the arms in sync. But we are all different. We have different backgrounds, different personalities, and different ways of working. We all have different strengths and weaknesses, and we all have different ways of communicating, learning, and growing.
+For everyone working together, team members need to click like pieces of a clock to move the arms in sync. But we are all different. We have different backgrounds, different personalities, and different ways of working. But, we need to find a way to coordinate our efforts in a direction that works for everyone despite our different strengths and weaknesses including unique ways of communicating, learning, and growing.
 
 ## What can the team do?
-There are times when team members might not be able to work together as a team. This is where the role of an Engineering Manager comes in. The Engineering Manager is responsible for ensuring that the team is working together effectively and efficiently. One of the most important skills that an Engineering Manager needs to have is to build team cohesion. Team cohesion is the degree to which team members are attracted to, motivated by, and committed to the team. It is the glue that holds the team together, and the reason why people stay in a team and work together to achieve a common goal. Let's talk about some of the tools that help you build team cohesion.
+There are times when team members might not be able to work together as a team. This is where the role of an Engineering Manager comes in. The Engineering Manager is responsible for ensuring that the team is working together effectively and efficiently. One of the most important skills that an Engineering Manager needs to have is to build team cohesion. Team cohesion is the degree to which team members are attracted to, motivated by, and committed to the team. It is the glue that holds the team together, and the reason why people stay in a team and work together to achieve a common goal. Let's talk about some of the tools that could help you build team cohesion.
 
-### Team User Manual
+### Team user manual
 One of the tools that an Engineering Manager can use to build team cohesion is the team user manual. The team user manual is a document that describes the team's culture, values, and processes. It is a living document that is constantly updated and improved, and It is shared with all team members and stakeholders. It is a document that is used to onboard new team members and to help them understand the team's culture and processes.
 
-The process of building one requires the inclusion of all team members. How do we achieve it? we need to start by asking all team members to write their user manuals. The manual describes the team member's preferred way of working, communicating, learning, and growing. If you want to see an example of one, [here](https://github.com/dolfolife/dolfolife/blob/main/user-manual/README.md) is mine.
+The process of building one requires the inclusion of all team members, and how do we achieve it? We need to start by asking all team members to write their user manuals. The manual describes the team member's preferred way of working, communicating, learning, and growing. If you want to see an example of one, [here](https://github.com/dolfolife/dolfolife/blob/main/user-manual/README.md) is mine.
 
-Once all team members have written their user manuals, the Engineering Manager needs to review them and consolidate them into one document. The document should be shared with all team members and stakeholders. It is important to note that the team user manual is not a static document. It is a living document that is constantly updated and improved. 
+Once all team members have written their user manuals, the Engineering Manager needs to review them and consolidate them into one document. The document should be shared with all team members and stakeholders. It is important to note that the team user manual is not a static document. It is a living document that is constantly updated and improved.
 
 We can describe the team user manual as the common set of rules that the team members follow to work together effectively and efficiently without stepping on each other's toes or forcing others to change their ways of working. It deletes bias from leadership and includes everyone in the process of building the team.
 
 ### Team Charter
-Another tool that an Engineering Manager can use to build team cohesion is the team charter. The team charter is a document that describes the team's mission, vision, and values. It is a living document that is constantly updated and improved, and It is shared with all team members and stakeholders. The team charter is built with the input of the 3 main users of a team: the team members, the stakeholders, and the customers.
+Another tool that an Engineering Manager can use to build team cohesion is the team charter. The team charter is a document that describes the team's mission, vision, and values. It is another living document that is constantly updated and improved, and It is shared with all team members and stakeholders. The team charter is built with the input of the 3 main users of a team: the team members, the stakeholders, and the customers.
 
 The sections of this document include the purpose of the team, the team's mission statement, the team's values, and the engineering principles to follow in the software engineering process. It should describe who are the customers and the market research done to understand their needs. You can also include the structure of the team and relevant information like the team user manual.
 
-Finally, it roadmaps the strategy and the actions the team will take in the next 3 to 6 months to solve these needs. One of the most efficient ways to drive this effort is with Object Key Results exercises.
+Finally, it roadmaps the strategy and the actions the team will take in the next 3 to 6 months to solve these needs. One of the most efficient ways to drive this effort is with the [Object Key Results methodology](https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/).
 
-This document is a living document that is constantly updated and improved when any of its parts pivots and the new learnings from the customers. It is a document that is used to onboard new team members and to help them understand the team's mission, vision, and values. It is also used to communicate with stakeholders and customers about the team's strategy and the actions the team will take. The Team Charter connects the stakeholders, the customers, and the team members on a common goal.
+This document is a living document that is constantly updated and improved when any of its parts pivots or there are new learnings from the customers. It is a document that is used to onboard new team members and to help them understand the team's mission, vision, and values. It is also used to communicate with stakeholders and customers about the team's strategy and the actions the team will take. The Team Charter connects the stakeholders, the customers, and the team members on a common goal.
 
 ### Team Roadmap
 Now that we know the rules of the team and the team's purpose, let's talk about the product that they build. To build cohesion in the team, the team members need to know what they are working on and what they are planning to do next. We split this into blocks of work called sprints. 
@@ -48,7 +48,7 @@ With the roadmap, we can estimate the amount of work the team will be able to de
 
 At any given moment every team member can read the roadmap and understand the priorities the team has and what is the next most valuable thing to work on. The roadmap also helps the leadership of the team surface any blockers or risks that might prevent the team from delivering the features on time. It also helps them set confidence levels for the team's progress.
 
-### Practice Effective Communication
+### Effective Communication
 
 Something worst than not collaborating is collaborating poorly. Effective communication is the key to building team cohesion. It is the key to building trust and making sure that everyone is on the same page, and making sure that everyone is working on the most valuable thing to work on. 
 
@@ -70,3 +70,4 @@ In this post, we talked about the importance of collaboration in agile developme
 ## References
 - [The Agile Manifesto](https://agilemanifesto.org/)
 - [Developing and Sustaining High-Performance Work Teams](https://www.shrm.org/resourcesandtools/tools-and-samples/toolkits/pages/developingandsustaininghigh-performanceworkteams.aspx)
+- [The 5 Dysfunctions of a Team](https://www.amazon.com/Dysfunctions-Team-Leadership-Fable-Second/dp/0787960756)
