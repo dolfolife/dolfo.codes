@@ -1,5 +1,5 @@
 ---
-title: "Teamwork - Collaboration"
+title: "Teamwork - Team Cohesion"
 date: 2023-04-02T12:44:05+01:00
 ---
 
@@ -9,10 +9,10 @@ While you may excel in your technical skills and abilities, it's important to re
 
 We can define Software Engineering as the union of people, processes, and products to enable the continuous delivery of value to our end users. There can be no promotion if the team does not grow with it. 
 
-I wrote "Teamwork" a series of posts where I will be describing topics surrounding working with teams like [Collaboration](./teamwork-collaboration.md), "Coaching and Mentoring", and "Leading and Delegating" from the perspective of an Engineering Manager. These tools will allow you to understand and help your team grow with you.
+I wrote "Teamwork" a series of posts where I will be describing topics surrounding working with teams like [Team Cohesion](./teamwork-collaboration.md), "Coaching and Mentoring", and "Leading and Delegating" from the perspective of an Engineering Manager. These tools will allow you to understand and help your team grow with you.
 
 ## Introduction
-In my first post, I will be talking about Collaboration especially working on agile development. Teamwork plays a crucial role in agile, an approach to software development that emphasizes continuous delivery, iterative development, and the ability to quickly respond to change.
+In my first post, I will be talking about Team Cohesion especially working on agile development. Teamwork plays a crucial role in agile, an approach to software development that emphasizes continuous delivery, iterative development, and the ability to quickly respond to change.
 
 In an agile team, everyone works together closely to create high-quality software products. According to the [Society for Human Resource Management](https://www.shrm.org), teamwork and collaboration are one of the top skills that employers look for in job candidates. Therefore, to achieve success as a Software Engineer, you need to work well with others.
 
@@ -65,7 +65,7 @@ We need to communicate in a way that is clear, concise, and actionable.
 1. **Provide regular updates:** Regular check-ins can help to keep everyone informed of the team's progress and any changes in direction. This helps to avoid surprises and allows team members to adjust their work accordingly.
 
 ## Conclusion
-In this post, we talked about the importance of collaboration in agile development. We also talked about the tools that you can use to build team cohesion and grow the team around you. To collaborate effectively we need to understand who we are, how we want to work, what are the most valuable objectives to work on, and how are we going to communicate to update each other. In my next post, I will be talking about Coaching and Mentoring and how to do it effectively. I will also be talking about the different types of coaching and mentoring and how to choose the right one for your team.
+In this post, we talked about the importance of team cohesion in agile development. We also talked about the tools that you can use to build team cohesion and grow the team around you. To collaborate effectively we need to understand who we are, how we want to work, what are the most valuable objectives to work on, and how are we going to communicate to update each other. In my next post, I will be talking about Coaching and Mentoring and how to do it effectively. I will also be talking about the different types of coaching and mentoring and how to choose the right one for your team.
 
 ## References
 - [The Agile Manifesto](https://agilemanifesto.org/)
