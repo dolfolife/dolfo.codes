@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Perspective on Test-Driven Development (TDD) | dolfo.codes</title>
+<meta name="keywords" content="">
+<meta name="description" content="In the realm of software development, Test-Driven Development (TDD) often elicits a spectrum of opinions. Some view it as a hindrance, others as the solution. And, like every extreme opinion about any topic, it is wrong to think in absolutes, we are not Sith.
+My journey with TDD began with Kent Beck&rsquo;s book, &ldquo;Test Driven Development by Example,&rdquo; during my Ruby on Rails learning phase. Here, I share my insights, hoping to demystify TDD and its practicality in software development.">
+<meta name="author" content="">
+<link rel="canonical" href="https://dolfo.codes/posts/test-drive-development/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4599eadb9eb2ad3d0a8d6827b41a8fda8f2f4af226b63466c09c5fddbc8706b7.css" integrity="sha256-RZnq256yrT0KjWgntBqP2o8vSvImtjRmwJxf3byHBrc=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://dolfo.codes/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dolfo.codes/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dolfo.codes/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dolfo.codes/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dolfo.codes/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="My Perspective on Test-Driven Development (TDD)" />
+<meta property="og:description" content="In the realm of software development, Test-Driven Development (TDD) often elicits a spectrum of opinions. Some view it as a hindrance, others as the solution. And, like every extreme opinion about any topic, it is wrong to think in absolutes, we are not Sith.
+My journey with TDD began with Kent Beck&rsquo;s book, &ldquo;Test Driven Development by Example,&rdquo; during my Ruby on Rails learning phase. Here, I share my insights, hoping to demystify TDD and its practicality in software development." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dolfo.codes/posts/test-drive-development/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-19T07:03:18+01:00" />
+<meta property="article:modified_time" content="2023-12-19T07:03:18+01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My Perspective on Test-Driven Development (TDD)"/>
+<meta name="twitter:description" content="In the realm of software development, Test-Driven Development (TDD) often elicits a spectrum of opinions. Some view it as a hindrance, others as the solution. And, like every extreme opinion about any topic, it is wrong to think in absolutes, we are not Sith.
+My journey with TDD began with Kent Beck&rsquo;s book, &ldquo;Test Driven Development by Example,&rdquo; during my Ruby on Rails learning phase. Here, I share my insights, hoping to demystify TDD and its practicality in software development."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dolfo.codes/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "My Perspective on Test-Driven Development (TDD)",
+      "item": "https://dolfo.codes/posts/test-drive-development/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "My Perspective on Test-Driven Development (TDD)",
+  "name": "My Perspective on Test-Driven Development (TDD)",
+  "description": "In the realm of software development, Test-Driven Development (TDD) often elicits a spectrum of opinions. Some view it as a hindrance, others as the solution. And, like every extreme opinion about any topic, it is wrong to think in absolutes, we are not Sith.\nMy journey with TDD began with Kent Beck\u0026rsquo;s book, \u0026ldquo;Test Driven Development by Example,\u0026rdquo; during my Ruby on Rails learning phase. Here, I share my insights, hoping to demystify TDD and its practicality in software development.",
+  "keywords": [
+    
+  ],
+  "articleBody": "In the realm of software development, Test-Driven Development (TDD) often elicits a spectrum of opinions. Some view it as a hindrance, others as the solution. And, like every extreme opinion about any topic, it is wrong to think in absolutes, we are not Sith.\nMy journey with TDD began with Kent Beck’s book, “Test Driven Development by Example,” during my Ruby on Rails learning phase. Here, I share my insights, hoping to demystify TDD and its practicality in software development.\nCommon Misconceptions about TDD I have made a lot of mistakes while learning TDD, and like others, I have had misconceptions about it like:\nTest Coverage and the overuse of Unit Tests TDD is not about achieving 100% test coverage or exhausting yourself with unit tests. It’s about driving the key aspects like public contracts and business logic, primarily in the Service and API layers, with tests. Overemphasis on test coverage as a code health metric is misleading. Instead, focus on code behavior.\nYou should test what users care about not how the code is written.\nOver-Isolation in Testing Test isolation is crucial, but it’s about ensuring tests don’t interfere with each other, not excessively mocking dependencies. Over-mocking can lead to missed dependency updates.\nTDD and Clarity of Purpose TDD is most effective when you have a clear understanding of what you’re developing. If the project’s direction is unclear, it’s better to return to the planning stage rather than jump straight into coding. Testing a tool that helps you write better code, but it’s not a substitute for good design.\nTesting for User-Centric Behavior Focus your tests on what matters to users, not on the intricacies of code implementation. TDD helps in validating the correctness and behavior of applications, offering rapid and reliable feedback throughout the software lifecycle.\nTesting and Non-functional requirements When refactoring or dealing with performance and implementation changes, breaking tests can indicate either a shift in logic or a flaw in the test itself. Effective Refactoring should guide you to improve code without altering its behavior, and effective TDD focus on aligning with user needs rather than implementation specifics.\nTDD in System Design TDD is closely linked with system design more than the implmentation details of your application. It’s a cycle of understanding new requirements, designing solutions, writing tests to validate these designs, and then coding to fulfill them. TDD is not just about writing software; it’s about ensuring that software aligns with user needs and system requirements.\nThe Future of TDD For me, this is one of the areas where Artificial Inteligence can help developers build better software as a testing companion for each project. AI can significantly enhance TDD by automating the generation of test cases. Machine learning algorithms can analyze code and generate tests that cover a wide range of scenarios, including edge cases that developers might not anticipate. This automation can lead to more thorough and efficient testing processes.\nTest Driven Development is not a panacea, nor is it a stumbling block. It’s a tool for creating reliable, user-focused software. It prompts us to test behaviors that matter and avoid getting bogged down in implementation details. Embracing TDD means embracing a mindset of continuous improvement and clear focus on what truly benefits the end-user.\n",
+  "wordCount" : "541",
+  "inLanguage": "en",
+  "datePublished": "2023-12-19T07:03:18+01:00",
+  "dateModified": "2023-12-19T07:03:18+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dolfo.codes/posts/test-drive-development/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "dolfo.codes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dolfo.codes/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dolfo.codes/" accesskey="h" title="dolfo.codes (Alt + H)">dolfo.codes</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://dolfo.codes/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dolfo.codes/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://dolfo.codes/">Home</a>&nbsp;»&nbsp;<a href="https://dolfo.codes/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      My Perspective on Test-Driven Development (TDD)
+    </h1>
+    <div class="post-meta"><span title='2023-12-19 07:03:18 +0100 +0100'>December 19, 2023</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#common-misconceptions-about-tdd" aria-label="Common Misconceptions about TDD">Common Misconceptions about TDD</a><ul>
+                        
+                <li>
+                    <a href="#test-coverage-and-the-overuse-of-unit-tests" aria-label="Test Coverage and the overuse of Unit Tests">Test Coverage and the overuse of Unit Tests</a></li>
+                <li>
+                    <a href="#over-isolation-in-testing" aria-label="Over-Isolation in Testing">Over-Isolation in Testing</a></li>
+                <li>
+                    <a href="#tdd-and-clarity-of-purpose" aria-label="TDD and Clarity of Purpose">TDD and Clarity of Purpose</a></li>
+                <li>
+                    <a href="#testing-for-user-centric-behavior" aria-label="Testing for User-Centric Behavior">Testing for User-Centric Behavior</a></li></ul>
+                </li>
+                <li>
+                    <a href="#testing-and-non-functional-requirements" aria-label="Testing and Non-functional requirements">Testing and Non-functional requirements</a></li>
+                <li>
+                    <a href="#tdd-in-system-design" aria-label="TDD in System Design">TDD in System Design</a></li>
+                <li>
+                    <a href="#the-future-of-tdd" aria-label="The Future of TDD">The Future of TDD</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>In the realm of software development, Test-Driven Development (TDD) often elicits a spectrum of opinions. Some view it as a hindrance, others as the solution. And, like every extreme opinion about any topic, it is wrong to think in absolutes, we are not Sith.</p>
+<div align="center">
+    <img src="/absolutes.jpg">
+</div>
+<p>My journey with TDD began with Kent Beck&rsquo;s book, &ldquo;Test Driven Development by Example,&rdquo; during my Ruby on Rails learning phase. Here, I share my insights, hoping to demystify TDD and its practicality in software development.</p>
+<h2 id="common-misconceptions-about-tdd">Common Misconceptions about TDD<a hidden class="anchor" aria-hidden="true" href="#common-misconceptions-about-tdd">#</a></h2>
+<p>I have made a lot of mistakes while learning TDD, and like others, I have had misconceptions about it like:</p>
+<h3 id="test-coverage-and-the-overuse-of-unit-tests">Test Coverage and the overuse of Unit Tests<a hidden class="anchor" aria-hidden="true" href="#test-coverage-and-the-overuse-of-unit-tests">#</a></h3>
+<p>TDD is not about achieving 100% test coverage or exhausting yourself with unit tests. It&rsquo;s about driving the key aspects like public contracts and business logic, primarily in the Service and API layers, with tests. Overemphasis on test coverage as a code health metric is misleading. Instead, focus on code behavior.</p>
+<p>You should test what users care about not how the code is written.</p>
+<h3 id="over-isolation-in-testing">Over-Isolation in Testing<a hidden class="anchor" aria-hidden="true" href="#over-isolation-in-testing">#</a></h3>
+<p>Test isolation is crucial, but it&rsquo;s about ensuring tests don&rsquo;t interfere with each other, not excessively mocking dependencies. Over-mocking can lead to missed dependency updates.</p>
+<h3 id="tdd-and-clarity-of-purpose">TDD and Clarity of Purpose<a hidden class="anchor" aria-hidden="true" href="#tdd-and-clarity-of-purpose">#</a></h3>
+<p>TDD is most effective when you have a clear understanding of what you&rsquo;re developing. If the project&rsquo;s direction is unclear, it&rsquo;s better to return to the planning stage rather than jump straight into coding. Testing a tool that helps you write better code, but it&rsquo;s not a substitute for good design.</p>
+<h3 id="testing-for-user-centric-behavior">Testing for User-Centric Behavior<a hidden class="anchor" aria-hidden="true" href="#testing-for-user-centric-behavior">#</a></h3>
+<p>Focus your tests on what matters to users, not on the intricacies of code implementation. TDD helps in validating the correctness and behavior of applications, offering rapid and reliable feedback throughout the software lifecycle.</p>
+<h2 id="testing-and-non-functional-requirements">Testing and Non-functional requirements<a hidden class="anchor" aria-hidden="true" href="#testing-and-non-functional-requirements">#</a></h2>
+<p>When refactoring or dealing with performance and implementation changes, breaking tests can indicate either a shift in logic or a flaw in the test itself. Effective Refactoring should guide you to improve code without altering its behavior, and effective TDD focus on aligning with user needs rather than implementation specifics.</p>
+<h2 id="tdd-in-system-design">TDD in System Design<a hidden class="anchor" aria-hidden="true" href="#tdd-in-system-design">#</a></h2>
+<p>TDD is closely linked with system design more than the implmentation details of your application. It&rsquo;s a cycle of understanding new requirements, designing solutions, writing tests to validate these designs, and then coding to fulfill them. TDD is not just about writing software; it&rsquo;s about ensuring that software aligns with user needs and system requirements.</p>
+<h2 id="the-future-of-tdd">The Future of TDD<a hidden class="anchor" aria-hidden="true" href="#the-future-of-tdd">#</a></h2>
+<p>For me, this is one of the areas where Artificial Inteligence can help developers build better software as a testing companion for each project. AI can significantly enhance TDD by automating the generation of test cases. Machine learning algorithms can analyze code and generate tests that cover a wide range of scenarios, including edge cases that developers might not anticipate. This automation can lead to more thorough and efficient testing processes.</p>
+<p>Test Driven Development is not a panacea, nor is it a stumbling block. It&rsquo;s a tool for creating reliable, user-focused software. It prompts us to test behaviors that matter and avoid getting bogged down in implementation details. Embracing TDD means embracing a mindset of continuous improvement and clear focus on what truly benefits the end-user.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://dolfo.codes/posts/mentoring-coaching-sponsorship/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Coaching and Mentoring</span>
+  </a>
+  <a class="next" href="https://dolfo.codes/posts/weakness/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Weakness</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://dolfo.codes/">dolfo.codes</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
