@@ -3,15 +3,17 @@ title: "Teamwork - Team Cohesion"
 date: 2023-04-02T12:44:05+01:00
 ---
 
-Many times as a Software Engineer you might realize you have grown your toolset of skills and feel you deserve a promotion. However, during the promotion cycle, your manager gave you feedback that for you to get promoted you need to grow others around you. This statement might have puzzled you, since when has your performance as an individual contributor had anything to do with other people? It is called the Individual Contributor path for a reason, no?
+Many times as a Software Engineer you might have realized you grown your toolset of skills and feel you deserve a promotion. However, during the promotion cycle, your manager gave you feedback that for you to get promoted you need to grow others around you. This statement might have puzzled you, since when has your performance as an individual contributor had anything to do with other people? It is called the Individual Contributor path for a reason, no?
 
 While you may excel in your technical skills and abilities, it's important to remember that most software engineering positions involve working with a team. Collaboration between developers, product managers, and designers can lead to better products and make you a valuable member of the team.
 
-We can define Software Engineering as the union of people, processes, and products to enable the continuous delivery of value to our end users. There can be no promotion if the team does not grow with it. 
+## Teamwork Series
 
-I wrote "Teamwork" a series of posts where I will be describing topics surrounding working with teams like [Team Cohesion](./teamwork-collaboration.md), "Coaching and Mentoring", and "Leading and Delegating" from the perspective of an Engineering Manager. These tools will allow you to understand and help your team grow with you.
+We can define Software Engineering as the union of people, processes, and products to enable the continuous delivery of value to our end users. There can be no promotion if the team does not grow with it.
 
-## Introduction
+"Teamwork" is a series of posts where I will be sharing my learnings from topics surrounding working with teams like [Team Cohesion](/posts/teamwork-collaboration), [Coaching and Mentoring](/posts/mentoring-coaching-sponsorship), [Delegating and Sponsoring](/posts/delegating-sponsoring), and others from the perspective of an Engineering Manager. These tools will allow you to support and lead your tech team grow with you.
+
+## Team Cohesion
 In my first post, I will be talking about Team Cohesion especially working on agile development. Teamwork plays a crucial role in agile, an approach to software development that emphasizes continuous delivery, iterative development, and the ability to quickly respond to change.
 
 In an agile team, everyone works together closely to create high-quality software products. According to the [Society for Human Resource Management](https://www.shrm.org), teamwork and collaboration are one of the top skills that employers look for in job candidates. Therefore, to achieve success as a Software Engineer, you need to work well with others.
