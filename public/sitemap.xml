@@ -2,34 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dolfo.codes/posts/hello-world/</loc>
+    <loc>http://localhost:57077/posts/hello-world/</loc>
     <lastmod>2022-07-25T20:10:50-05:00</lastmod>
   </url><url>
-    <loc>https://dolfo.codes/posts/delegating-sponsoring/</loc>
+    <loc>http://localhost:57077/</loc>
+    <lastmod>2025-11-11T11:55:31+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:57077/posts/dei-use-case/</loc>
+    <lastmod>2025-11-11T11:55:31+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:57077/posts/</loc>
+    <lastmod>2025-11-11T11:55:31+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:57077/posts/delegating-sponsoring/</loc>
     <lastmod>2024-02-17T12:21:54-06:00</lastmod>
   </url><url>
-    <loc>https://dolfo.codes/</loc>
-    <lastmod>2024-02-17T12:21:54-06:00</lastmod>
-  </url><url>
-    <loc>https://dolfo.codes/posts/</loc>
-    <lastmod>2024-02-17T12:21:54-06:00</lastmod>
-  </url><url>
-    <loc>https://dolfo.codes/posts/mentoring-coaching-sponsorship/</loc>
+    <loc>http://localhost:57077/posts/mentoring-coaching-sponsorship/</loc>
     <lastmod>2024-02-17T10:10:43-06:00</lastmod>
   </url><url>
-    <loc>https://dolfo.codes/posts/test-drive-development/</loc>
+    <loc>http://localhost:57077/posts/test-drive-development/</loc>
     <lastmod>2023-12-19T07:03:18+01:00</lastmod>
   </url><url>
-    <loc>https://dolfo.codes/posts/weakness/</loc>
+    <loc>http://localhost:57077/posts/weakness/</loc>
     <lastmod>2023-11-20T13:12:51-06:00</lastmod>
   </url><url>
-    <loc>https://dolfo.codes/posts/teamwork-collaboration/</loc>
+    <loc>http://localhost:57077/posts/teamwork-collaboration/</loc>
     <lastmod>2023-04-02T12:44:05+01:00</lastmod>
   </url><url>
-    <loc>https://dolfo.codes/categories/</loc>
+    <loc>http://localhost:57077/categories/</loc>
   </url><url>
-    <loc>https://dolfo.codes/search/</loc>
+    <loc>http://localhost:57077/search/</loc>
   </url><url>
-    <loc>https://dolfo.codes/tags/</loc>
+    <loc>http://localhost:57077/tags/</loc>
   </url>
 </urlset>
