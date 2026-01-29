@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Team Modes: Delivery Mode vs. Rescue Mode | dolfo.codes</title>
+<meta name="keywords" content="">
+<meta name="description" content="As engineering leaders, we are constantly juggling competing priorities. We want to deliver value to our customers, but we also need to maintain the health of our systems and the wellbeing of our teams. It&rsquo;s a delicate balancing act, and it&rsquo;s easy to feel like we&rsquo;re always falling short in one area or another. I decided to break down patterns I&rsquo;ve encountered over the years building teams, and I&rsquo;ve realized that there are two distinct modes that teams operate in: Delivery Mode and Rescue Mode.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/team-modes/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/team-modes/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="dolfo.codes (Alt + H)">dolfo.codes</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Team Modes: Delivery Mode vs. Rescue Mode
+    </h1>
+    <div class="post-meta"><span title='2026-01-29 16:19:43 +0100 CET'>January 29, 2026</span>&nbsp;·&nbsp;<span>12 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#core-concepts" aria-label="Core Concepts">Core Concepts</a><ul>
+                        
+                <li>
+                    <a href="#delivery-mode-sustainable-growth" aria-label="Delivery Mode: Sustainable Growth">Delivery Mode: Sustainable Growth</a></li>
+                <li>
+                    <a href="#rescue-mode-crisis-response" aria-label="Rescue Mode: Crisis Response">Rescue Mode: Crisis Response</a></li></ul>
+                </li>
+                <li>
+                    <a href="#the-burst-capacity-model" aria-label="The Burst Capacity Model">The Burst Capacity Model</a><ul>
+                        
+                <li>
+                    <a href="#key-principles" aria-label="Key Principles">Key Principles</a></li>
+                <li>
+                    <a href="#warning-signs-of-burnout" aria-label="Warning Signs of Burnout">Warning Signs of Burnout</a></li></ul>
+                </li>
+                <li>
+                    <a href="#critical-success-factors" aria-label="Critical Success Factors">Critical Success Factors</a><ul>
+                        
+                <li>
+                    <a href="#for-rescue-mode-success" aria-label="For Rescue Mode Success">For Rescue Mode Success</a></li>
+                <li>
+                    <a href="#for-delivery-mode-success" aria-label="For Delivery Mode Success">For Delivery Mode Success</a></li></ul>
+                </li>
+                <li>
+                    <a href="#dependency-management-and-system-resilience" aria-label="Dependency Management and System Resilience">Dependency Management and System Resilience</a><ul>
+                        
+                <li>
+                    <a href="#the-dependency-problem" aria-label="The Dependency Problem">The Dependency Problem</a></li>
+                <li>
+                    <a href="#example-scenario" aria-label="Example Scenario">Example Scenario</a></li>
+                <li>
+                    <a href="#mitigation-strategies" aria-label="Mitigation Strategies">Mitigation Strategies</a></li></ul>
+                </li>
+                <li>
+                    <a href="#incident-command-structure" aria-label="Incident Command Structure">Incident Command Structure</a><ul>
+                        
+                <li>
+                    <a href="#exit-criteria-back-to-delivery-checklist" aria-label="Exit Criteria (&ldquo;Back to Delivery&rdquo; Checklist)">Exit Criteria (&ldquo;Back to Delivery&rdquo; Checklist)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#leadership-responsibilities-by-mode" aria-label="Leadership Responsibilities by Mode">Leadership Responsibilities by Mode</a><ul>
+                        
+                <li>
+                    <a href="#delivery-mode-leadership" aria-label="Delivery Mode Leadership">Delivery Mode Leadership</a></li>
+                <li>
+                    <a href="#rescue-mode-leadership" aria-label="Rescue Mode Leadership">Rescue Mode Leadership</a></li>
+                <li>
+                    <a href="#post-rescue-mode-leadership" aria-label="Post Rescue Mode Leadership">Post Rescue Mode Leadership</a></li></ul>
+                </li>
+                <li>
+                    <a href="#communicating-mode-transitions" aria-label="Communicating Mode Transitions">Communicating Mode Transitions</a><ul>
+                        
+                <li>
+                    <a href="#entering-rescue-mode-delivery--rescue" aria-label="Entering Rescue Mode (Delivery → Rescue)">Entering Rescue Mode (Delivery → Rescue)</a></li>
+                <li>
+                    <a href="#exiting-rescue-mode-rescue--delivery" aria-label="Exiting Rescue Mode (Rescue → Delivery)">Exiting Rescue Mode (Rescue → Delivery)</a></li>
+                <li>
+                    <a href="#rituals-that-reinforce-mode-awareness" aria-label="Rituals That Reinforce Mode Awareness">Rituals That Reinforce Mode Awareness</a></li></ul>
+                </li>
+                <li>
+                    <a href="#post-incident-follow-through" aria-label="Post Incident Follow Through">Post Incident Follow Through</a><ul>
+                        
+                <li>
+                    <a href="#the-postmortem-checklist" aria-label="The Postmortem Checklist">The Postmortem Checklist</a></li>
+                <li>
+                    <a href="#tying-actions-to-the-backlog" aria-label="Tying Actions to the Backlog">Tying Actions to the Backlog</a></li>
+                <li>
+                    <a href="#follow-through-rituals" aria-label="Follow Through Rituals">Follow Through Rituals</a></li>
+                <li>
+                    <a href="#anti-patterns-to-avoid" aria-label="Anti-Patterns to Avoid">Anti-Patterns to Avoid</a></li></ul>
+                </li>
+                <li>
+                    <a href="#team-maturity-assessment" aria-label="Team Maturity Assessment">Team Maturity Assessment</a><ul>
+                        
+                <li>
+                    <a href="#rescue-mode-effectiveness" aria-label="Rescue Mode Effectiveness">Rescue Mode Effectiveness</a></li>
+                <li>
+                    <a href="#delivery-mode-effectiveness" aria-label="Delivery Mode Effectiveness">Delivery Mode Effectiveness</a></li>
+                <li>
+                    <a href="#what-mature-teams-look-like" aria-label="What Mature Teams Look Like">What Mature Teams Look Like</a></li></ul>
+                </li>
+                <li>
+                    <a href="#common-pitfalls-and-anti-patterns" aria-label="Common Pitfalls and Anti-Patterns">Common Pitfalls and Anti-Patterns</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#attempting-to-budget-rescue-mode-work" aria-label="Attempting to Budget Rescue Mode Work">Attempting to Budget Rescue Mode Work</a></li></ul>
+                    
+                <li>
+                    <a href="#treating-all-work-as-delivery-mode" aria-label="Treating All Work as Delivery Mode">Treating All Work as Delivery Mode</a></li>
+                <li>
+                    <a href="#operating-in-permanent-rescue-mode" aria-label="Operating in Permanent Rescue Mode">Operating in Permanent Rescue Mode</a></li>
+                <li>
+                    <a href="#ignoring-post-rescue-recovery" aria-label="Ignoring Post-Rescue Recovery">Ignoring Post-Rescue Recovery</a></li></ul>
+                </li>
+                <li>
+                    <a href="#final-tips" aria-label="Final Tips">Final Tips</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>As engineering leaders, we are constantly juggling competing priorities. We want to deliver value to our customers, but we also need to maintain the health of our systems and the wellbeing of our teams. It&rsquo;s a delicate balancing act, and it&rsquo;s easy to feel like we&rsquo;re always falling short in one area or another. I decided to break down patterns I&rsquo;ve encountered over the years building teams, and I&rsquo;ve realized that there are two distinct modes that teams operate in: Delivery Mode and Rescue Mode.</p>
+<p>The idea of spliting the team modes into two came from reading the book <em>The Hard Thing About Hard Things</em> by Ben Horowitz. In the book, Horowitz talks about the difference between running a company during good times and running a company during bad times. He argues that management techniques must flip entirely depending on the context.</p>
+<ul>
+<li><strong>Peacetime CEO:</strong> Focuses on culture, fostering creativity, and minimizing conflict. They have the luxury of time to build consensus.</li>
+<li><strong>Wartime CEO:</strong> Focuses on the prime directive (market survival). They care little about feelings or consensus; they care about the strict adherence to the path that leads to safety.</li>
+</ul>
+<p>An engineering manager must similarly toggle their style, being an empathetic coach in Peace (Delivery Mode) and a directive commander in War (Rescue Mode).</p>
+<p>Trying to apply the same tools, processes, and leadership style to every situation leads to frustration: sprint planning feels bureaucratic during a production outage, and incident style urgency burns people out when applied to routine feature work. The reality is that each mode demands a different point of view and a different set of levers.</p>
+<p>By explicitly naming <strong>Delivery Mode</strong> and <strong>Rescue Mode</strong>, you gain clarity:</p>
+<ul>
+<li><strong>Right tool for the job:</strong> Instead of forcing one process to cover all scenarios, you can adopt tools and rituals purpose built for each context. OKRs and sprint planning for Delivery, incident command and war rooms for Rescue.</li>
+<li><strong>Faster mode recognition:</strong> Once you learn to identify which mode you&rsquo;re in, you stop wasting time applying the wrong playbook. The question shifts from &ldquo;why isn&rsquo;t this working?&rdquo; to &ldquo;which mode are we in, and what does that mode require?&rdquo;</li>
+<li><strong>Reduced cognitive load:</strong> Your team can relax into the current mode&rsquo;s expectations instead of constantly renegotiating how to work.</li>
+</ul>
+<p>The goal isn&rsquo;t to eliminate Rescue Mode since some level of crisis is inevitable. The goal is to know which mode you&rsquo;re in, apply the right approach, and transition cleanly when circumstances change. This document is designed to help you do exactly that.</p>
+<p>In the sections that follow, we&rsquo;ll define each mode in detail, what triggers it, what success looks like, and what leadership behaviors it demands. We&rsquo;ll also explore the &ldquo;burst capacity&rdquo; model (how much Rescue Mode a team can absorb before burning out), dependency management (why other teams&rsquo; crises become yours), and practical checklists for transitioning between modes. Whether you&rsquo;re currently firefighting or enjoying a calm sprint, this framework will give you a shared vocabulary and a playbook for both.</p>
+<h2 id="core-concepts">Core Concepts<a hidden class="anchor" aria-hidden="true" href="#core-concepts">#</a></h2>
+<h3 id="delivery-mode-sustainable-growth">Delivery Mode: Sustainable Growth<a hidden class="anchor" aria-hidden="true" href="#delivery-mode-sustainable-growth">#</a></h3>
+<p><em>The default state. Validating the path, optimizing the machine, and growing the team.</em></p>
+<p>In Delivery Mode, the backlog is clear, and the environment is predictable. Leadership focuses on long-term sustainability, career growth, and system hygiene.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Primary Objective</strong></td>
+          <td>Deliver roadmap value sustainably</td>
+      </tr>
+      <tr>
+          <td><strong>Mindset</strong></td>
+          <td>Thoughtful, predictable, optimize for long-term throughput</td>
+      </tr>
+      <tr>
+          <td><strong>Operating Constraints</strong></td>
+          <td>Keep work predictable; protect focus time</td>
+      </tr>
+      <tr>
+          <td><strong>Typical Signals</strong></td>
+          <td>Stable on-call, known backlog, low &ldquo;unknown unknowns&rdquo;</td>
+      </tr>
+      <tr>
+          <td><strong>Success Metrics</strong></td>
+          <td>Velocity, capacity, quality, predictability</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Key Activities:</strong></p>
+<ul>
+<li><strong>Delivery &amp; Planning:</strong> Sprint execution, OKRs, capacity/velocity management</li>
+<li><strong>People &amp; Org:</strong> Onboarding, coaching/mentoring, performance cycles, hiring</li>
+<li><strong>Technical Excellence:</strong> System design reviews, refactoring, dev lifecycle improvements, TDD</li>
+<li><strong>Learning &amp; Leverage:</strong> Stretch goals, deliberate learning, platform investments that compound</li>
+<li><strong>Artifacts:</strong> Plans/OKRs, design reviews, career plans, tech debt strategy, hiring plan</li>
+</ul>
+<h3 id="rescue-mode-crisis-response">Rescue Mode: Crisis Response<a hidden class="anchor" aria-hidden="true" href="#rescue-mode-crisis-response">#</a></h3>
+<p><em>The exception state. High operational intensity, unknown territories, and immediate survival.</em></p>
+<p>In Rescue Mode, the team faces perceived chaos due toincidents, security threats, or existential business deadlines. The path is unclear or obstructed, and the standard process is often too slow.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Primary Objective</strong></td>
+          <td>Restore service/safety fast, reduce blast radius, return to Delivery Mode</td>
+      </tr>
+      <tr>
+          <td><strong>Mindset</strong></td>
+          <td>Alert, decisive, action-oriented</td>
+      </tr>
+      <tr>
+          <td><strong>Operating Constraints</strong></td>
+          <td>Context switching is expensive; comms must be tight</td>
+      </tr>
+      <tr>
+          <td><strong>Typical Signals</strong></td>
+          <td>Sev-0/1, active exploit/CVE, outage, major regression, urgent escalations</td>
+      </tr>
+      <tr>
+          <td><strong>Success Metrics</strong></td>
+          <td>MTTD, MTTR, customer impact containment</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Key Activities:</strong></p>
+<ul>
+<li><strong>Reliability Incidents:</strong> Sev-0/1 response, on-call escalations, detection + recovery</li>
+<li><strong>Security Response:</strong> CVEs, active threats, emergency patching/mitigations</li>
+<li><strong>Operational Interrupts:</strong> Urgent support escalations, after-hours stabilization</li>
+<li><strong>Business-Critical Crunch:</strong> &ldquo;Do-or-die&rdquo; moments, funding deadlines, existential customer impact</li>
+<li><strong>Artifacts:</strong> Incident timeline, decision log, status updates, postmortem + follow-ups</li>
+</ul>
+<h2 id="the-burst-capacity-model">The Burst Capacity Model<a hidden class="anchor" aria-hidden="true" href="#the-burst-capacity-model">#</a></h2>
+<p>Every team has a <strong>burst capacity</strong> for Rescue Mode similar to AWS EBS burst credits.</p>
+<h3 id="key-principles">Key Principles<a hidden class="anchor" aria-hidden="true" href="#key-principles">#</a></h3>
+<ol>
+<li><strong>Finite Resource:</strong> Teams cannot sustain Rescue Mode indefinitely without burning out</li>
+<li><strong>Recovery Time Required:</strong> After Rescue Mode, teams need Delivery time to recover and recharge</li>
+<li><strong>Predictability Trade-off:</strong> Too much Rescue Mode erodes stability, morale, and predictability</li>
+<li><strong>Cannot Be Cut:</strong> Rescue Mode work takes as long as it takes—you cannot artificially constrain it</li>
+</ol>
+<h3 id="warning-signs-of-burnout">Warning Signs of Burnout<a hidden class="anchor" aria-hidden="true" href="#warning-signs-of-burnout">#</a></h3>
+<ul>
+<li>Decreased velocity in Delivery Mode</li>
+<li>Increased employee turnover</li>
+<li>Declining code quality</li>
+<li>Reduced engagement in planning activities</li>
+<li>More incidents (creating a negative feedback loop)</li>
+</ul>
+<h2 id="critical-success-factors">Critical Success Factors<a hidden class="anchor" aria-hidden="true" href="#critical-success-factors">#</a></h2>
+<h3 id="for-rescue-mode-success">For Rescue Mode Success<a hidden class="anchor" aria-hidden="true" href="#for-rescue-mode-success">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Factor</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Trust</strong></td>
+          <td>Team members must trust each other&rsquo;s technical judgment under pressure</td>
+      </tr>
+      <tr>
+          <td><strong>Tooling</strong></td>
+          <td>Automated detection, deployment, rollback, and monitoring reduce MTTR</td>
+      </tr>
+      <tr>
+          <td><strong>Onboarding</strong></td>
+          <td>Every team member must be fully onboarded to contribute during crises</td>
+      </tr>
+      <tr>
+          <td><strong>Focus</strong></td>
+          <td>Eliminate all distractions outside the critical task</td>
+      </tr>
+      <tr>
+          <td><strong>Clear Communication</strong></td>
+          <td>Defined incident commander roles and communication protocols</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>DORA Metrics for Rescue Mode:</strong></p>
+<ul>
+<li><strong>MTTR (Mean Time to Recovery):</strong> How quickly can you restore service?</li>
+<li><strong>MTTD (Mean Time to Detection):</strong> How quickly do you identify issues?</li>
+</ul>
+<h3 id="for-delivery-mode-success">For Delivery Mode Success<a hidden class="anchor" aria-hidden="true" href="#for-delivery-mode-success">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Factor</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Rhythm and Ritual</strong></td>
+          <td>Establish sustainable work patterns and ceremonies</td>
+      </tr>
+      <tr>
+          <td><strong>Automation</strong></td>
+          <td>Automate toil work to maximize time for business value</td>
+      </tr>
+      <tr>
+          <td><strong>Capacity Planning</strong></td>
+          <td>Realistic estimation accounting for potential Rescue Mode interruptions</td>
+      </tr>
+      <tr>
+          <td><strong>Career Investment</strong></td>
+          <td>Dedicate time to mentoring, feedback, and development</td>
+      </tr>
+      <tr>
+          <td><strong>Technical Excellence</strong></td>
+          <td>Pay down debt proactively to prevent future incidents</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="dependency-management-and-system-resilience">Dependency Management and System Resilience<a hidden class="anchor" aria-hidden="true" href="#dependency-management-and-system-resilience">#</a></h2>
+<blockquote>
+<p><strong>Critical Principle:</strong> A system is only as strong as its weakest link (internal or external).</p>
+</blockquote>
+<h3 id="the-dependency-problem">The Dependency Problem<a hidden class="anchor" aria-hidden="true" href="#the-dependency-problem">#</a></h3>
+<p>Your team&rsquo;s Rescue Mode frequency is affected by:</p>
+<ul>
+<li>Number of dependencies on external services</li>
+<li>Hardness of coupling (hard vs. soft dependencies)</li>
+<li>Resilience patterns implemented (circuit breakers, timeouts, graceful degradation)</li>
+</ul>
+<h3 id="example-scenario">Example Scenario<a hidden class="anchor" aria-hidden="true" href="#example-scenario">#</a></h3>
+<p>Your service displays customer data including &ldquo;last 3 orders&rdquo; from an external Orders service:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Dependency Type</th>
+          <th>Behavior</th>
+          <th>Your Mode</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Hard Dependency</strong></td>
+          <td>Orders service down → Your service appears down</td>
+          <td>Enter Rescue Mode</td>
+      </tr>
+      <tr>
+          <td><strong>Soft Dependency</strong></td>
+          <td>Orders service down → Your service shows data without orders</td>
+          <td>Remain in Delivery Mode</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="mitigation-strategies">Mitigation Strategies<a hidden class="anchor" aria-hidden="true" href="#mitigation-strategies">#</a></h3>
+<ul>
+<li>Make non-critical attributes optional</li>
+<li>Implement circuit breakers and fallbacks</li>
+<li>Cache data for resilience</li>
+<li>Design for graceful degradation</li>
+<li>Establish clear SLA expectations with dependency owners</li>
+</ul>
+<h2 id="incident-command-structure">Incident Command Structure<a hidden class="anchor" aria-hidden="true" href="#incident-command-structure">#</a></h2>
+<p>Use an incident command structure so the team can execute without everyone trying to lead at once:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Role</th>
+          <th>Responsibility</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Incident Commander (IC)</strong></td>
+          <td>Owns decisions + keeps the incident moving</td>
+      </tr>
+      <tr>
+          <td><strong>Comms Lead</strong></td>
+          <td>Stakeholder/customer updates, keeps noise off responders</td>
+      </tr>
+      <tr>
+          <td><strong>Ops/Tech Lead(s)</strong></td>
+          <td>Directs technical investigation and mitigations</td>
+      </tr>
+      <tr>
+          <td><strong>Scribe</strong></td>
+          <td>Timeline + decisions + actions captured live</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="exit-criteria-back-to-delivery-checklist">Exit Criteria (&ldquo;Back to Delivery&rdquo; Checklist)<a hidden class="anchor" aria-hidden="true" href="#exit-criteria-back-to-delivery-checklist">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Customer impact stopped or bounded</li>
+<li><input disabled="" type="checkbox"> Monitoring confirms stability trend</li>
+<li><input disabled="" type="checkbox"> Short-term mitigation in place (even if root cause isn&rsquo;t fully fixed)</li>
+<li><input disabled="" type="checkbox"> Postmortem scheduled and owners assigned</li>
+</ul>
+<h2 id="leadership-responsibilities-by-mode">Leadership Responsibilities by Mode<a hidden class="anchor" aria-hidden="true" href="#leadership-responsibilities-by-mode">#</a></h2>
+<h3 id="delivery-mode-leadership">Delivery Mode Leadership<a hidden class="anchor" aria-hidden="true" href="#delivery-mode-leadership">#</a></h3>
+<ul>
+<li>✓ Focus on career development and growth opportunities</li>
+<li>✓ Maintain predictable velocity and capacity planning</li>
+<li>✓ Work on team alignment and priority setting</li>
+<li>✓ Invest in automation and toil reduction</li>
+<li>✓ Build resilience through architecture and tooling</li>
+<li>✓ Create psychological safety and trust</li>
+<li>✓ Hire and onboard effectively</li>
+<li>✓ Review and optimize processes</li>
+</ul>
+<h3 id="rescue-mode-leadership">Rescue Mode Leadership<a hidden class="anchor" aria-hidden="true" href="#rescue-mode-leadership">#</a></h3>
+<ul>
+<li>✓ Define clear success criteria for resolution</li>
+<li>✓ Identify steps to return to Delivery Mode</li>
+<li>✓ Remove obstacles and distractions</li>
+<li>✓ Communicate status to stakeholders</li>
+<li>✓ Ensure proper incident command structure</li>
+<li>✓ Monitor team energy and prevent burnout</li>
+<li>✓ Document decisions for AAR</li>
+<li>✓ Shield team from external pressure</li>
+</ul>
+<h3 id="post-rescue-mode-leadership">Post Rescue Mode Leadership<a hidden class="anchor" aria-hidden="true" href="#post-rescue-mode-leadership">#</a></h3>
+<ul>
+<li>✓ Conduct After-Action Reviews (AAR) and postmortems</li>
+<li>✓ Identify root causes and prevention measures</li>
+<li>✓ Update runbooks and tooling</li>
+<li>✓ Give team recovery time</li>
+<li>✓ Recognize contributions and effort</li>
+<li>✓ Implement improvements to reduce future occurrence</li>
+</ul>
+<h2 id="communicating-mode-transitions">Communicating Mode Transitions<a hidden class="anchor" aria-hidden="true" href="#communicating-mode-transitions">#</a></h2>
+<p>Clear communication during mode transitions prevents confusion and sets expectations. Ambiguity about &ldquo;are we in incident mode or not?&rdquo; leads to half-measures and delayed responses.</p>
+<h3 id="entering-rescue-mode-delivery--rescue">Entering Rescue Mode (Delivery → Rescue)<a hidden class="anchor" aria-hidden="true" href="#entering-rescue-mode-delivery--rescue">#</a></h3>
+<p><strong>To the Team:</strong></p>
+<ol>
+<li><strong>Explicit declaration:</strong> &ldquo;We are now in Rescue Mode. [Brief description of the trigger].&rdquo;</li>
+<li><strong>Assign roles immediately:</strong> &ldquo;IC is [name], Comms is [name].&rdquo;</li>
+<li><strong>State the success criteria:</strong> &ldquo;We&rsquo;re done when [X metric is restored / customer impact is stopped].&rdquo;</li>
+<li><strong>Clear expectation shift:</strong> &ldquo;All sprint work is paused. Focus only on this.&rdquo;</li>
+</ol>
+<p><strong>To Stakeholders:</strong></p>
+<ul>
+<li>Use a standing incident communication template:<br>
+<em>&ldquo;We have identified [issue]. Impact: [scope]. Current status: [investigating/mitigating]. Next update in [30 min].&rdquo;</em></li>
+<li>Over-communicate cadence, under-communicate speculation.</li>
+</ul>
+<h3 id="exiting-rescue-mode-rescue--delivery">Exiting Rescue Mode (Rescue → Delivery)<a hidden class="anchor" aria-hidden="true" href="#exiting-rescue-mode-rescue--delivery">#</a></h3>
+<p><strong>To the Team:</strong></p>
+<ol>
+<li><strong>Explicit stand-down:</strong> &ldquo;We are exiting Rescue Mode. The immediate threat is contained.&rdquo;</li>
+<li><strong>Acknowledge the work:</strong> Quick recognition of effort before moving on.</li>
+<li><strong>Set recovery expectations:</strong> &ldquo;We&rsquo;re resuming sprint work tomorrow. Today is buffer/decompression.&rdquo;</li>
+<li><strong>Schedule the postmortem:</strong> &ldquo;Postmortem is [date]. Action items will flow into the backlog.&rdquo;</li>
+</ol>
+<p><strong>To Stakeholders:</strong></p>
+<ul>
+<li>Final incident summary:<br>
+<em>&ldquo;Issue resolved at [time]. Root cause: [brief]. Customer impact: [duration/scope]. Follow-up postmortem scheduled.&rdquo;</em></li>
+</ul>
+<h3 id="rituals-that-reinforce-mode-awareness">Rituals That Reinforce Mode Awareness<a hidden class="anchor" aria-hidden="true" href="#rituals-that-reinforce-mode-awareness">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Ritual</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Status channel</strong></td>
+          <td>A single #team-status channel where mode is always visible (&quot;🟢 Delivery&quot; or &ldquo;🔴 Rescue: [incident link]&rdquo;)</td>
+      </tr>
+      <tr>
+          <td><strong>Standup framing</strong></td>
+          <td>Start every standup with &ldquo;We are in [Mode].&rdquo; Reinforces shared awareness.</td>
+      </tr>
+      <tr>
+          <td><strong>Calendar block</strong></td>
+          <td>When entering Rescue Mode, IC or manager cancels/postpones non-essential meetings for the team.</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="post-incident-follow-through">Post Incident Follow Through<a hidden class="anchor" aria-hidden="true" href="#post-incident-follow-through">#</a></h2>
+<p>A postmortem without owners and dates becomes a diary. The value of Rescue Mode isn&rsquo;t just surviving the incident—it&rsquo;s learning from it so it doesn&rsquo;t happen again.</p>
+<h3 id="the-postmortem-checklist">The Postmortem Checklist<a hidden class="anchor" aria-hidden="true" href="#the-postmortem-checklist">#</a></h3>
+<p>Every postmortem should produce:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Output</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Timeline</strong></td>
+          <td>What happened, when, and who did what. Facts only, no blame.</td>
+      </tr>
+      <tr>
+          <td><strong>Root Cause(s)</strong></td>
+          <td>The underlying issue(s), not just the trigger. Use &ldquo;5 Whys&rdquo; or similar.</td>
+      </tr>
+      <tr>
+          <td><strong>Contributing Factors</strong></td>
+          <td>What made detection slower or impact larger?</td>
+      </tr>
+      <tr>
+          <td><strong>Action Items</strong></td>
+          <td>Concrete tasks with owners and due dates.</td>
+      </tr>
+      <tr>
+          <td><strong>What Went Well</strong></td>
+          <td>Reinforce behaviors you want repeated.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="tying-actions-to-the-backlog">Tying Actions to the Backlog<a hidden class="anchor" aria-hidden="true" href="#tying-actions-to-the-backlog">#</a></h3>
+<p>Postmortem action items must flow into your tracked work system (Jira, Linear, etc.):</p>
+<ol>
+<li><strong>Create tickets immediately</strong> — Don&rsquo;t wait. Do it in the postmortem meeting.</li>
+<li><strong>Tag them consistently</strong> — Use a label like <code>postmortem</code> or <code>incident follow up</code> for visibility.</li>
+<li><strong>Assign owners, not teams</strong> — &ldquo;Team X will fix this&rdquo; means no one will fix this.</li>
+<li><strong>Set realistic due dates</strong> — Balance urgency against current Delivery Mode capacity.</li>
+<li><strong>Review in sprint planning</strong> — Postmortem items compete for capacity like any other work.</li>
+</ol>
+<h3 id="follow-through-rituals">Follow Through Rituals<a hidden class="anchor" aria-hidden="true" href="#follow-through-rituals">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Ritual</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Postmortem review meeting</strong></td>
+          <td>48-72 hours after incident. Fresh enough to remember, calm enough to think.</td>
+      </tr>
+      <tr>
+          <td><strong>Action item standup tag</strong></td>
+          <td>Weekly check: &ldquo;Any postmortem items blocked or at risk?&rdquo;</td>
+      </tr>
+      <tr>
+          <td><strong>Monthly incident review</strong></td>
+          <td>Leadership reviews open postmortem actions. Escalates stale items.</td>
+      </tr>
+      <tr>
+          <td><strong>Quarterly retro</strong></td>
+          <td>Are we seeing repeat patterns? Is our prevention investment working?</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="anti-patterns-to-avoid">Anti-Patterns to Avoid<a hidden class="anchor" aria-hidden="true" href="#anti-patterns-to-avoid">#</a></h3>
+<ul>
+<li><strong>Postmortem delayed indefinitely</strong> — Schedule it before closing the incident.</li>
+<li><strong>Actions without owners</strong> — If no one owns it, it won&rsquo;t happen.</li>
+<li><strong>&ldquo;We&rsquo;ll be more careful&rdquo;</strong> — Not an action. What system change prevents recurrence?</li>
+<li><strong>100-item action list</strong> — Pick the 3-5 highest-leverage items. The rest goes to tech debt backlog.</li>
+<li><strong>Blame culture</strong> — If people fear punishment, they&rsquo;ll hide information. You&rsquo;ll learn nothing.</li>
+</ul>
+<h2 id="team-maturity-assessment">Team Maturity Assessment<a hidden class="anchor" aria-hidden="true" href="#team-maturity-assessment">#</a></h2>
+<p>How do you know if your team is actually good at operating in both modes? Maturity isn&rsquo;t about never entering Rescue Mode but how smoothly you operate in each mode and how gracefully you transition between them.</p>
+<p>Use this framework to assess where your team stands and where to invest.</p>
+<h3 id="rescue-mode-effectiveness">Rescue Mode Effectiveness<a hidden class="anchor" aria-hidden="true" href="#rescue-mode-effectiveness">#</a></h3>
+<p>A mature team in Rescue Mode doesn&rsquo;t panic. They&rsquo;ve built the muscle memory and tooling to respond quickly without chaos. Assess your team on:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Dimension</th>
+          <th>What to Look For</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Speed of detection and response</strong></td>
+          <td>How long between &ldquo;something is wrong&rdquo; and &ldquo;we&rsquo;re actively working on it&rdquo;? MTTD and MTTR are your primary signals.</td>
+      </tr>
+      <tr>
+          <td><strong>Quality of communication</strong></td>
+          <td>Are stakeholders informed without responders being interrupted? Is there a single source of truth?</td>
+      </tr>
+      <tr>
+          <td><strong>Ability to execute under pressure</strong></td>
+          <td>Does the team fragment or unite? Do people know their roles, or is there confusion about who decides what?</td>
+      </tr>
+      <tr>
+          <td><strong>Post-incident learning</strong></td>
+          <td>Do postmortems happen? Do actions get completed? Are you seeing fewer repeat incidents over time?</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Red flags:</strong> Finger-pointing during incidents, no clear IC, stakeholders pinging individual engineers for status, repeat incidents on the same root cause.</p>
+<h3 id="delivery-mode-effectiveness">Delivery Mode Effectiveness<a hidden class="anchor" aria-hidden="true" href="#delivery-mode-effectiveness">#</a></h3>
+<p>A mature team in Delivery Mode operates predictably and sustainably. They&rsquo;re not just shipping—they&rsquo;re building capability for the future. Assess your team on:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Dimension</th>
+          <th>What to Look For</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Consistent velocity and predictability</strong></td>
+          <td>Can you forecast what will ship this sprint with reasonable accuracy? Or is every sprint a surprise?</td>
+      </tr>
+      <tr>
+          <td><strong>Proactive debt management</strong></td>
+          <td>Is tech debt addressed intentionally, or only when it causes outages? Do you have a debt backlog?</td>
+      </tr>
+      <tr>
+          <td><strong>Career development culture</strong></td>
+          <td>Are 1:1s happening? Are people growing? Do ICs have visibility into their path forward?</td>
+      </tr>
+      <tr>
+          <td><strong>Low unplanned work percentage</strong></td>
+          <td>What fraction of your sprint is reactive vs. planned? High unplanned work erodes trust and predictability.</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Red flags:</strong> &ldquo;We never have time for refactoring,&rdquo; cancelled 1:1s, engineers surprised by their performance reviews, constant scope creep.</p>
+<h3 id="what-mature-teams-look-like">What Mature Teams Look Like<a hidden class="anchor" aria-hidden="true" href="#what-mature-teams-look-like">#</a></h3>
+<ul>
+<li><strong>Rescue Mode is a calm workflow, not a panic.</strong> Roles are clear, runbooks exist, and people trust each other.</li>
+<li><strong>Most time is spent in Delivery Mode.</strong> Rescue Mode is the exception, not the norm.</li>
+<li><strong>Rescue Mode frequency is decreasing over time.</strong> Prevention investments are paying off.</li>
+<li><strong>DORA metrics trend positively.</strong> Deployment frequency up, lead time down, change failure rate down, MTTR down.</li>
+<li><strong>The team can articulate which mode they&rsquo;re in.</strong> Shared vocabulary exists and is used.</li>
+</ul>
+<h2 id="common-pitfalls-and-anti-patterns">Common Pitfalls and Anti-Patterns<a hidden class="anchor" aria-hidden="true" href="#common-pitfalls-and-anti-patterns">#</a></h2>
+<h4 id="attempting-to-budget-rescue-mode-work">Attempting to Budget Rescue Mode Work<a hidden class="anchor" aria-hidden="true" href="#attempting-to-budget-rescue-mode-work">#</a></h4>
+<ul>
+<li>&ldquo;Ops days&rdquo; or &ldquo;on-call effort&rdquo; percentages are estimates at best</li>
+<li>Rescue Mode work cannot be cut due to time constraints</li>
+<li>Attempting to time-box critical incidents leads to poor outcomes</li>
+</ul>
+<h3 id="treating-all-work-as-delivery-mode">Treating All Work as Delivery Mode<a hidden class="anchor" aria-hidden="true" href="#treating-all-work-as-delivery-mode">#</a></h3>
+<ul>
+<li>Applying standard planning processes during crises creates delays</li>
+<li>Requiring extensive documentation before action during incidents</li>
+<li>Not recognizing when to shift gears</li>
+</ul>
+<h3 id="operating-in-permanent-rescue-mode">Operating in Permanent Rescue Mode<a hidden class="anchor" aria-hidden="true" href="#operating-in-permanent-rescue-mode">#</a></h3>
+<ul>
+<li>Treating every task as urgent undermines true priorities</li>
+<li>Team burnout and turnover</li>
+<li>No time for strategic improvements</li>
+<li>Accumulating technical debt</li>
+</ul>
+<h3 id="ignoring-post-rescue-recovery">Ignoring Post-Rescue Recovery<a hidden class="anchor" aria-hidden="true" href="#ignoring-post-rescue-recovery">#</a></h3>
+<ul>
+<li>Immediately returning to normal sprint work without reflection</li>
+<li>No AAR or postmortem process</li>
+<li>Missing opportunities for prevention</li>
+<li>Team exhaustion accumulates</li>
+</ul>
+<h2 id="final-tips">Final Tips<a hidden class="anchor" aria-hidden="true" href="#final-tips">#</a></h2>
+<p>Engineering leadership requires fluency in both Delivery and Rescue modes. Success comes from:</p>
+<ul>
+<li><strong>Building trust and capability</strong> during Delivery Mode to enable effective Rescue Mode response</li>
+<li><strong>Investing in tooling and automation</strong> to reduce toil and improve MTTR/MTTD</li>
+<li><strong>Managing dependencies</strong> to prevent cascading failures</li>
+<li><strong>Creating sustainable rhythms</strong> that allow for recovery and growth</li>
+<li><strong>Learning continuously</strong> from incidents to prevent recurrence</li>
+</ul>
+<p>The most mature teams minimize time in Rescue Mode through prevention while maintaining the capability to execute effectively when crises occur. Your role as a leader is to create the conditions for both modes to succeed without burning out your team.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/hello-world/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Hello World</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/dei-use-case/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Navigating the Grey: Reconciling Merit and Diversity in Hiring</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">dolfo.codes</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

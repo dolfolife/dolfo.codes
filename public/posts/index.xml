@@ -2,64 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on dolfo.codes</title>
-    <link>http://localhost:57077/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on dolfo.codes</description>
-    <generator>Hugo -- 0.151.0</generator>
+    <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Nov 2025 11:55:31 +0100</lastBuildDate>
-    <atom:link href="http://localhost:57077/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jan 2026 16:19:43 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
-      <link>http://localhost:57077/posts/hello-world/</link>
+      <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Mon, 25 Jul 2022 20:10:50 -0500</pubDate>
-      <guid>http://localhost:57077/posts/hello-world/</guid>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
       <description>&lt;p&gt;Hello There. I have been thinking in sharing my thoughts. I do not consider myself a good writer nor a good software engineer, but I like to sit in silence and think about what I do. I hope you enjoy it.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Team Modes: Delivery Mode vs. Rescue Mode</title>
+      <link>http://localhost:1313/posts/team-modes/</link>
+      <pubDate>Thu, 29 Jan 2026 16:19:43 +0100</pubDate>
+      <guid>http://localhost:1313/posts/team-modes/</guid>
+      <description>&lt;p&gt;As engineering leaders, we are constantly juggling competing priorities. We want to deliver value to our customers, but we also need to maintain the health of our systems and the wellbeing of our teams. It&amp;rsquo;s a delicate balancing act, and it&amp;rsquo;s easy to feel like we&amp;rsquo;re always falling short in one area or another. I decided to break down patterns I&amp;rsquo;ve encountered over the years building teams, and I&amp;rsquo;ve realized that there are two distinct modes that teams operate in: Delivery Mode and Rescue Mode.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Navigating the Grey: Reconciling Merit and Diversity in Hiring</title>
-      <link>http://localhost:57077/posts/dei-use-case/</link>
+      <link>http://localhost:1313/posts/dei-use-case/</link>
       <pubDate>Tue, 11 Nov 2025 11:55:31 +0100</pubDate>
-      <guid>http://localhost:57077/posts/dei-use-case/</guid>
+      <guid>http://localhost:1313/posts/dei-use-case/</guid>
       <description>&lt;p&gt;I know this is a delicate topic to talk about, but I wanted to share my personal experience and opinion. The conversation around Diversity, Equity, and Inclusion (DEI) seems to be very binary, either &amp;ldquo;force people to hire diversity no matter the cost&amp;rdquo; or &amp;ldquo;just hire the most qualified person.&amp;rdquo; In a domain where it is never black and white, this polarized approach feels wrong. Like every polarized conversation, it divides people, causing them to defend their positions and attack those who think differently. DEI plays a role in a very grey and biased ecosystem, which is hiring, and you cannot have polarized policies or opinions when it comes to who you are working with.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Delegating and Sponsoring</title>
-      <link>http://localhost:57077/posts/delegating-sponsoring/</link>
+      <link>http://localhost:1313/posts/delegating-sponsoring/</link>
       <pubDate>Sat, 17 Feb 2024 12:21:54 -0600</pubDate>
-      <guid>http://localhost:57077/posts/delegating-sponsoring/</guid>
+      <guid>http://localhost:1313/posts/delegating-sponsoring/</guid>
       <description>&lt;p&gt;Many times as a Software Engineer you might have realized you grown your toolset of skills and feel you deserve a promotion. However, during the promotion cycle, your manager gave you feedback that for you to get promoted you need to grow others around you. This statement might have puzzled you, since when has your performance as an individual contributor had anything to do with other people? It is called the Individual Contributor path for a reason, no?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Coaching and Mentoring</title>
-      <link>http://localhost:57077/posts/mentoring-coaching-sponsorship/</link>
+      <link>http://localhost:1313/posts/mentoring-coaching-sponsorship/</link>
       <pubDate>Sat, 17 Feb 2024 10:10:43 -0600</pubDate>
-      <guid>http://localhost:57077/posts/mentoring-coaching-sponsorship/</guid>
+      <guid>http://localhost:1313/posts/mentoring-coaching-sponsorship/</guid>
       <description>&lt;p&gt;Many times as a Software Engineer you might have realized you grown your toolset of skills and feel you deserve a promotion. However, during the promotion cycle, your manager gave you feedback that for you to get promoted you need to grow others around you. This statement might have puzzled you, since when has your performance as an individual contributor had anything to do with other people? It is called the Individual Contributor path for a reason, no?&lt;/p&gt;</description>
     </item>
     <item>
       <title>My Perspective on Test-Driven Development (TDD)</title>
-      <link>http://localhost:57077/posts/test-drive-development/</link>
+      <link>http://localhost:1313/posts/test-drive-development/</link>
       <pubDate>Tue, 19 Dec 2023 07:03:18 +0100</pubDate>
-      <guid>http://localhost:57077/posts/test-drive-development/</guid>
+      <guid>http://localhost:1313/posts/test-drive-development/</guid>
       <description>&lt;p&gt;In the realm of software development, Test-Driven Development (TDD) often elicits a spectrum of opinions. Some view it as a hindrance, others as the solution. And, like every extreme opinion about any topic, it is wrong to think in absolutes, we are not Sith.&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;img src=&#34;http://localhost:57077/absolutes.jpg&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/absolutes.jpg&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;My journey with TDD began with Kent Beck&amp;rsquo;s book, &amp;ldquo;Test Driven Development by Example,&amp;rdquo; during my Ruby on Rails learning phase. Here, I share my insights, hoping to demystify TDD and its practicality in software development.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Weakness</title>
-      <link>http://localhost:57077/posts/weakness/</link>
+      <link>http://localhost:1313/posts/weakness/</link>
       <pubDate>Mon, 20 Nov 2023 13:12:51 -0600</pubDate>
-      <guid>http://localhost:57077/posts/weakness/</guid>
+      <guid>http://localhost:1313/posts/weakness/</guid>
       <description>&lt;p&gt;&amp;ldquo;What are your weaknesses?&amp;quot;—One of the most mocked questions in the interview process. People often joke about it and often have nothing interesting to say. More often than not, individuals use this opportunity to brag or express how much effort they are willing to put in to go the extra mile.&lt;/p&gt;
 &lt;p&gt;People struggle to provide good answers to this question because they don’t often take the time to sit and think about their weaknesses. Growing involves being aware of these weaknesses, which is part of the path to becoming a better person.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Teamwork - Team Cohesion</title>
-      <link>http://localhost:57077/posts/teamwork-collaboration/</link>
+      <link>http://localhost:1313/posts/teamwork-collaboration/</link>
       <pubDate>Sun, 02 Apr 2023 12:44:05 +0100</pubDate>
-      <guid>http://localhost:57077/posts/teamwork-collaboration/</guid>
+      <guid>http://localhost:1313/posts/teamwork-collaboration/</guid>
       <description>&lt;p&gt;Many times as a Software Engineer you might have realized you grown your toolset of skills and feel you deserve a promotion. However, during the promotion cycle, your manager gave you feedback that for you to get promoted you need to grow others around you. This statement might have puzzled you, since when has your performance as an individual contributor had anything to do with other people? It is called the Individual Contributor path for a reason, no?&lt;/p&gt;</description>
     </item>
   </channel>
