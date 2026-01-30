@@ -18,6 +18,7 @@ params:
     ShowToc: true
     description: "Dolfo Codes blog"
     displayFullLangName: true
+    favicon: "favicon.ico"
     profileMode:
         enabled: true
         title: Hi, I am Dolfo # optional default will be site title
